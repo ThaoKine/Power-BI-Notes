@@ -240,7 +240,13 @@ With **Both**:
 - Relationships **don’t duplicate** or change your data. They just allow tables to work together in visuals.
 - If Power BI auto-detects a relationship when you load data, check that it's using the **correct fields**!
 
-- # 4. DAX
+---
+
+here’s an example of what will it look like:
+![image](https://github.com/user-attachments/assets/d37de5f3-2d58-40d6-bb2b-4d6d809aa862)
+
+---
+# 4. DAX
 
 Dax = **Data Analysis Expressions**.
 
@@ -388,10 +394,4 @@ But here’s the issue:
 ## 4B. If Statement
 
 - It’s completely the same with Excel.
-
----
-
-here’s an example of what will it look like:
-![image](https://github.com/user-attachments/assets/d37de5f3-2d58-40d6-bb2b-4d6d809aa862)
-
 
