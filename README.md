@@ -230,7 +230,7 @@ With **Both**:
 | **Single** | One table filters the other | Simple relationships, default |
 | **Both** | Both tables can filter each other | Complex reports with slicers |
 
-> “Make this relationship active”	= Tells Power BI to use this connection instead of another one between the same tables
+> More for you: “Make this relationship active”	= Tells Power BI to use this connection instead of another one between the same tables
 > 
 ---
 
