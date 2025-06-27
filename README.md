@@ -240,6 +240,157 @@ With **Both**:
 - Relationships **don’t duplicate** or change your data. They just allow tables to work together in visuals.
 - If Power BI auto-detects a relationship when you load data, check that it's using the **correct fields**!
 
+- # 4. DAX
+
+Dax = **Data Analysis Expressions**.
+
+Simply put: Dax = you tell Power BI to calculate what you want
+
+## 4A. What’s different between Aggregate and Iterator functions?
+
+### ✅ **Aggregate Functions** (like `SUM`, `AVERAGE`, `MAX`):
+
+- They work on **a single column**.
+- They just **calculate a total or summary** — no row-by-row logic.
+
+📌 Example:
+
+`SUM(Sales[Quantity])` → Just adds up all the numbers in the `Quantity` column.
+
+---
+
+### 🔁 **Iterator Functions** (like `SUMX`, `AVERAGEX`, `MAXX`):
+
+- They go **row by row** through a table.
+- For each row, they **calculate something**, then **combine the results**.
+
+📌 Example:
+
+`SUMX(Sales, Sales[Quantity] * Sales[Price])` → For each row, multiply Quantity × Price, then add it all up.
+
+## Example:
+
+| Product | Quantity | Price |
+| --- | --- | --- |
+| A | 2 | 10 |
+| B | 3 | 15 |
+| C | 1 | 20 |
+
+---
+
+### 📌 Example 1: Using an **Aggregate Function (`SUM`)**
+
+```
+dax
+CopyEdit
+Total Quantity = SUM(Sales[Quantity])
+```
+
+➡️ Adds: `2 + 3 + 1 = 6`
+
+✅ **Just adds all values in the Quantity column.**
+
+---
+
+### 📌 Example 2: Using an **Iterator Function (`SUMX`)**
+
+```
+dax
+CopyEdit
+Total Sales = SUMX(Sales, Sales[Quantity] * Sales[Price])
+```
+
+➡️ Row-by-row calculation:
+
+- Product A: `2 × 10 = 20`
+- Product B: `3 × 15 = 45`
+- Product C: `1 × 20 = 20`
+
+Then add: `20 + 45 + 20 = 85`
+
+✅ **Calculates per row, then sums the results.**
+
+---
+
+### Little tricky question to test our understand of Iterator with relationship model in PBI.
+
+Here’s a formula in Power Query: 
+
+```
+Profit SUMX 
+= SUMX('Apocolypse Sales', (('Apocolypse Store'[Price]) - ('Apocolypse Store'[Production Cost]))*'Apocolypse Sales'[Units Sold])
+```
+
+why if I wrote the table 'Apocolypse Store' and keep everything else intact, an error “the Unit Sold in Apocolypse Sales table can't be determined” popped up?
+
+### Answer:
+
+So the relationship goes from:
+
+```
+CopyEdit
+'Apocolypse Store'[Product ID] → 'Apocolypse Sales'[Product ID]
+```
+
+That means:
+
+- `'Apocolypse Store'` = the **one** side
+- `'Apocolypse Sales'` = the **many** side
+- Cross-filter direction = **Single** (so data only flows **from Store to Sales** ✅)
+
+---
+
+### ❓ So now you ask:
+
+> “If I iterate over 'Apocolypse Store', why can’t I access 'Apocolypse Sales'[Units Sold]?”
+> 
+
+iterate over = **Go through each row** in the `'Apocolypse Store'` table **one by one** and do something with each row.
+
+---
+
+### 💡 The Simple Answer:
+
+Even though the **relationship flows from Store → Sales**, you're using:
+
+```
+dax
+CopyEdit
+SUMX('Apocolypse Store', 'Apocolypse Sales'[Units Sold])
+```
+
+That asks:
+
+> “While looping through 'Apocolypse Store', give me a single value from 'Apocolypse Sales'.”
+> 
+
+But here’s the issue:
+
+- Each product in `'Apocolypse Store'` may match **multiple rows** in `'Apocolypse Sales'`.
+- Power BI goes:
+    
+    > “You want one value, but I see many. I don’t know which one to choose!”
+    > 
+
+🛑 **So it throws an error**:
+
+> “A single value for 'Units Sold' cannot be determined…”
+> 
+
+---
+
+### ✅ Key Point:
+
+> The error is not about the relationship direction.
+> 
+> 
+> It’s because Power BI finds **multiple matching sales**, but you’re asking for **one value** — and it doesn’t know how to pick.
+> 
+
+## 4B. If Statement
+
+- It’s completely the same with Excel.
+
 ---
 
 here’s an example of what will it look like:
