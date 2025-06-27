@@ -282,7 +282,7 @@ Simply put: Dax = you tell Power BI to calculate what you want
 
 ```
 dax
-CopyEdit
+
 Total Quantity = SUM(Sales[Quantity])
 ```
 
@@ -296,7 +296,7 @@ Total Quantity = SUM(Sales[Quantity])
 
 ```
 dax
-CopyEdit
+
 Total Sales = SUMX(Sales, Sales[Quantity] * Sales[Price])
 ```
 
@@ -328,7 +328,6 @@ why if I wrote the table 'Apocolypse Store' and keep everything else intact, an 
 So the relationship goes from:
 
 ```
-CopyEdit
 'Apocolypse Store'[Product ID] → 'Apocolypse Sales'[Product ID]
 ```
 
@@ -355,7 +354,6 @@ Even though the **relationship flows from Store → Sales**, you're using:
 
 ```
 dax
-CopyEdit
 SUMX('Apocolypse Store', 'Apocolypse Sales'[Units Sold])
 ```
 
