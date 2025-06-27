@@ -1,16 +1,18 @@
-# Power BI Interface Navigation
+# Big disclaimer:
+
+Everything I write here is not to teach you or anything, because obviously, these are not enough. Therefore, I highly recommend you watch the video of Alex The Analyst (These notes were made while I were watching his tutorials)
+
+[Learn Power BI under 3 hours](https://youtu.be/I0vQ_VLZTWg?si=UEwHmCtvJqR3q-Vm)
+
+# 1. Power BI Interface Navigation
 ## Load data and transform data in PBI
 
 **Loading data:** move data from a source to another place (in this case is PBI)
 
 **Transforming data: involve doing some editing and changing with Power Query Editor and THEN, it will load the data in PBI** 
 
-<aside>
-💡
-
-Note with the PBI interface: the report view doesn’t have anything, so click the table view below. 
-
-</aside>
+>💡 Note with the PBI interface: the report view doesn’t have anything, so click the table view below.
+>
 
 # Model view
 
@@ -32,4 +34,8 @@ Now that we see clearly that not every product at Costco is cheaper than the oth
 
 Since the rice and Canned Vegetables at Target are cheaper.
 
-# Power Query
+# 2. Power Query
+> 💡 Unpivot Columns in Power Query means turning column headers into row values, so your data becomes longer instead of wider — making it easier to analyze.
+> 
+
+✅ Use it when you have repeated column names like months, subjects, or categories, and you want them all in **one column** instead.
