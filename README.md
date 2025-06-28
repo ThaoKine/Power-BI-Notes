@@ -420,6 +420,71 @@ But the green circle area is the drill down section.
 
 ![image](https://github.com/user-attachments/assets/e5a6a420-64e3-48bc-8730-648d62441900)
 
+---
+# 6. Bins and Lists
 
+## 🧠 What are they?
 
+| Feature | **Bin** | **List** |
+| --- | --- | --- |
+| Used For | Numeric/continuous values | Text/categorical values |
+| Automatically Divides? | ✅ Yes, by size | ❌ No, you choose each group |
+| Example | Age grouped in 0–10, 11–20, etc. | Countries grouped into regions |
 
+With Lists = kind of like IF STATEMENT, but just faster and easier.
+
+Little Note with Bin Size: if Bin Size for Month = 1, it means for each bin, there’ll be 1 month.
+
+# 7. Conditional Formatting
+
+## Background color
+
+- Totally the same with Excel.
+
+> Note: Do not use Background color, data bar, icon in the same column, it will be SOOOO cONfusINg.
+> 
+
+## Data bar
+
+- It’s like you have a table like this:
+
+| Product | Sales |
+| --- | --- |
+| A | 100 |
+| B | 500 |
+| C | 300 |
+
+With **data bars**, it might look like this:
+
+| Product | Sales |
+| --- | --- |
+| A | ▓ |
+| B | ▓▓▓▓▓▓▓▓ |
+| C | ▓▓▓▓▓ |
+
+# 8. Visualization:
+
+Note: You should know the purpose of each chart before you use it since **you’re using charts to tell story with data.** (and I think the purpose of each chart can be googled 😉)
+
+## For example: Clustered Stacked Column Chart with a Line
+
+### 🎯 **What Is It Usually Used For?/turn**
+
+It’s used when you want to **compare two things at once**:
+
+- A **breakdown** of parts (with stacked bars)
+- Alongside a **total or trend** line (with the line chart)
+
+---
+
+### ✅ Typical Use Cases
+
+| Use Case | What the Chart Shows |
+| --- | --- |
+| **Sales Breakdown vs. Quantity Sold** | Bar: Price + Cost (stacked), Line: Units Sold |
+| **Revenue by Region vs. Growth Rate** | Bar: Revenue by product/service, Line: Growth rate per region |
+| **Budget vs. Actual vs. Profit %** | Bar: Actual + Budget (stacked), Line: Profit margin trend |
+
+## Little note about pie chart/donut chart
+
+Many DA don’t use it since it’s hard to approximate the difference between them BUT you can be requested to use that. So be aware of that.
