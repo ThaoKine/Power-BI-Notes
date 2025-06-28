@@ -389,9 +389,37 @@ But here’s the issue:
 > 
 > 
 > It’s because Power BI finds **multiple matching sales**, but you’re asking for **one value** — and it doesn’t know how to pick.
-> 
 
-## 4B. If Statement
+## 4B. If Statement:
 
-- It’s completely the same with Excel.
+It’s completely the same with Excel.
+
+---
+# 5. Drill down
+
+### 🟡 What is "Drill Down" in Power BI?
+
+**Drill Down** lets you click on a visual (like a chart or graph) to **see more detailed data**.
+
+### 🔍 Where Is It Used?
+
+Usually in visuals like:
+
+- Bar charts
+- Pie charts
+- Line charts
+- Matrix tables
+
+---
+
+### 🛠 How to Use Drill Down?
+
+You MUST watch the Alex The Analyst Power BI in order to really understand how it works.
+
+But the green circle area is the drill down section.
+
+![image](https://github.com/user-attachments/assets/e5a6a420-64e3-48bc-8730-648d62441900)
+
+
+
 
